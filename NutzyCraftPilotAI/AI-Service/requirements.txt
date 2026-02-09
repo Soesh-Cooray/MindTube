@@ -4,14 +4,15 @@ uvicorn[standard]==0.32.0
 pydantic==2.10.0
 python-multipart==0.0.6
 
-# YouTube transcript extraction - using RapidAPI
+# YouTube transcript extraction
+yt-dlp==2025.12.8
 
 # NLP processing
 spacy==3.8.2
 # Run after install: python -m spacy download en_core_web_sm
 
-# AI Services
-groq>=1.0.0
+# Groq AI
+groq
 
 # Utilities
 requests==2.32.3

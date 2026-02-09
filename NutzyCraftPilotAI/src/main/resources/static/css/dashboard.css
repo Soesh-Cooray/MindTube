@@ -139,6 +139,7 @@
         margin-bottom: 0;
         border: 1px solid var(--labs-border);
         background: white;
+        flex-shrink: 0; /* Prevent shrinking on small screens */
     }
     
     .sidebar-link.active {
@@ -154,8 +155,10 @@
     /* Add spacer to ensure last item isn't cut off */
     .sidebar::after {
         content: '';
-        min-width: 1rem;
+        min-width: 2rem; /* Increased size */
         height: 1px;
+        flex-shrink: 0; /* Ensure spacer doesn't shrink */
+        display: block;
     }
 }
 

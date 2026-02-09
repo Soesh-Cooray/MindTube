@@ -28,6 +28,11 @@
     text-decoration: none;
 }
 
+.signout-link {
+    color: #d93025;
+    margin-top: 1rem;
+}
+
 .sidebar-link.active,
 .sidebar-link:hover {
     background: var(--labs-white);
@@ -140,6 +145,17 @@
         background: var(--labs-black);
         color: white;
         border-color: var(--labs-black);
+    }
+
+    .signout-link {
+        margin-top: 0;
+    }
+
+    /* Add spacer to ensure last item isn't cut off */
+    .sidebar::after {
+        content: '';
+        min-width: 1rem;
+        height: 1px;
     }
 }
 

@@ -113,33 +113,32 @@
 
     .sidebar {
         display: flex;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center items */
         position: sticky;
         top: 5rem;
         margin-bottom: 2rem;
         background: #f8f9fa;
         z-index: 90;
-        gap: 0.5rem;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        padding-right: 1rem; /* Fix for cutoff button */
+        gap: 0.75rem;
+        padding-bottom: 0.5rem;
     }
     
     .sidebar::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
     }
 
     .sidebar-section-title {
-        display: none; /* Hide titles on mobile for cleaner bar */
+        display: none;
     }
 
     .sidebar-link {
-        white-space: nowrap;
         margin-bottom: 0;
         border: 1px solid var(--labs-border);
         background: white;
-        flex-shrink: 0; /* Prevent shrinking on small screens */
+        text-align: center;
+        justify-content: center;
+        flex: 1 1 40%; /* Take up roughly half width, minus gap */
     }
     
     .sidebar-link.active {
@@ -150,15 +149,14 @@
 
     .signout-link {
         margin-top: 0;
+        flex: 1 1 100%; /* Force full width on new line */
+        order: 3; /* Ensure it's last */
+        max-width: 200px; /* Prevent it from being too wide */
     }
 
-    /* Add spacer to ensure last item isn't cut off */
+    /* Remove spacer as we are wrapping now */
     .sidebar::after {
-        content: '';
-        min-width: 2rem; /* Increased size */
-        height: 1px;
-        flex-shrink: 0; /* Ensure spacer doesn't shrink */
-        display: block;
+        display: none;
     }
 }
 
